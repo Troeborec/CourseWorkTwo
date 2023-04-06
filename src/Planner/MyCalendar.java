@@ -15,7 +15,7 @@ public class MyCalendar {
         try {
             scanner.nextLine();
             System.out.println("Введите название задачи");
-            //хмм
+            //Я так понимаю нужна волидация
         }
     }
 }
