@@ -1,5 +1,7 @@
 package Task;
 
+import Exceptions.RepeatabilityTypeException;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -8,15 +10,14 @@ public abstract class Task {
     private  String nameTittle;
     private  String description;
     private final TaskType taskType;
-    private  LocalDateTime dateTime;
+    private  LocalDateTime dateTime = LocalDateTime.now();
     private static int idGeneration = 1;
     private final int id;
 
-    public Task(String nameTittle, String description, TaskType taskType, LocalDateTime dateTime, int id) {
+    public Task(String nameTittle, String description, TaskType taskType) {
         this.nameTittle = nameTittle;
-        this.description = description;// как сделать валидацию строк?
+        this.description = description;
         this.taskType = taskType;
-        this.dateTime = dateTime;
         this.id = idGeneration;
         idGeneration++;
     }
@@ -27,6 +28,14 @@ public abstract class Task {
 
     public int getId() {
         return id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void setNameTittle(String nameTittle) {
@@ -54,4 +63,9 @@ public abstract class Task {
     }
 
     public abstract boolean checkOccurance(LocalDateTime localDateTime);
+
+    public abstract void getNextDate(Task task) throws RepeatabilityTypeException;
+
+
+
 }

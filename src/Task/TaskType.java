@@ -1,11 +1,16 @@
 package Task;
 public enum TaskType {
-    WORK(0),
-    PRIVATE(1);
+    WORK("Рабочая заметка"),
+    PRIVATE("Личная заметка");
 
-    public final int value;
+    private final String taskType;
 
-    TaskType(final int value) {
-        this.value = value;
+
+    TaskType(String taskType) {
+        this.taskType = taskType;
+    }
+
+    public String printType() {
+        return taskType;
     }
 }
