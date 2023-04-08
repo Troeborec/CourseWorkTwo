@@ -10,12 +10,13 @@ public class EarlyTask extends Task{
     }
 
     @Override
-    public boolean checkOccurance(LocalDateTime requestDate) {
-        return getDateTime().getDayOfMonth() == requestDate.getDayOfMonth() && getDateTime().getMonth() == requestDate.getMonth();
+    public boolean appaersIn(LocalDateTime dateTime) {
+        return getDateTime().getDayOfMonth() == dateTime.getDayOfMonth() && getDateTime().getMonth() == dateTime.getMonth();
     }
 
     @Override
     public void getNextDate(Task task) throws RepeatabilityTypeException {
 
     }
+
 }

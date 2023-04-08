@@ -10,12 +10,14 @@ public class MonthlyTask extends Task{
     }
 
     @Override
-    public boolean checkOccurance(LocalDateTime requestDate) {
-        return getDateTime().getDayOfMonth() == (requestDate.getDayOfMonth());
+    public boolean appaersIn(LocalDateTime dateTime) {
+        return getDateTime().getDayOfMonth() == (dateTime.getDayOfMonth());
     }
 
     @Override
     public void getNextDate(Task task) throws RepeatabilityTypeException {
 
     }
+
+
 }

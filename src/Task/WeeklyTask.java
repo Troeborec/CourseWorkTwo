@@ -10,8 +10,8 @@ public class WeeklyTask extends Task{
     }
 
     @Override
-    public boolean checkOccurance(LocalDateTime requestDate) {
-        return getDateTime().getDayOfWeek().equals(requestDate.getDayOfWeek());
+    public boolean appaersIn(LocalDateTime dateTime) {
+        return getDateTime().getDayOfWeek().equals(dateTime.getDayOfWeek());
     }
 
     @Override

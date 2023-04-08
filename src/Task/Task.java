@@ -62,9 +62,10 @@ public abstract class Task {
         return super.equals(obj);
     }
 
-    public abstract boolean checkOccurance(LocalDateTime localDateTime);
+    public abstract boolean appaersIn(LocalDateTime localDateTime);
 
     public abstract void getNextDate(Task task) throws RepeatabilityTypeException;
+    
 
 
 

@@ -59,12 +59,18 @@ public class TaskService {
 
     //Проверить какие есть задачи на дату
 
-    public void getAllTaskByDate(LocalDateTime date) {
+    public void getAllTaskByDate(LocalDateTime dateTime) {
         Set<Task> taskSet = new HashSet<Task>();
         for (Map.Entry<Integer, Task> entry : taskMap.entrySet()) {
-            if (entry.getValue().appaersIn(date)) {
+            if (entry.getValue().appaersIn(dateTime)) {
                 taskSet.add(entry.getValue());
             }
+        }
+
+        System.out.println("Список дел на " + dateTime.format(DateTimeFormatter.ofPattern("dd MMMM YYYY")) + ":");
+        for (Task task : taskSet) {
+            System.out.println(task.getDateTime().format(DateTimeFormatter.ofPattern("hh-mm")) + " " + task.getDescription());
+
         }
     }
 }

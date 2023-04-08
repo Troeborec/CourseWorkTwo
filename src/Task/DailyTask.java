@@ -10,7 +10,7 @@ public class DailyTask extends Task{
     }
 
     @Override
-    public boolean checkOccurance(LocalDateTime requestDate) {
+    public boolean appaersIn(LocalDateTime dateTime) {
         return true;
     }
 

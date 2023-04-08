@@ -12,6 +12,7 @@ public class Main {
         MonthlyTask taskFour = new MonthlyTask("Работа", "Отправить стастистику программы", TaskType.WORK);
         OneTimeTask taskFive = new OneTimeTask("Просто", "Поехать выбрать обои", TaskType.PRIVATE);
         WeeklyTask taskSix = new WeeklyTask("Дом", "Убраться дома", TaskType.PRIVATE);
+        MonthlyTask taskSeven = new MonthlyTask("Работа", "Отправить вторую стастистику программы", TaskType.WORK);
 
 
         TaskService taskService = new TaskService(new HashMap<>());
@@ -19,6 +20,7 @@ public class Main {
         //Добавляем задачи
         taskService.addTask(taskOne);
         taskService.addTask(taskFour);
+        taskService.addTask(taskSeven);
 
         //Получаем список задач
         taskService.printNextData(taskThree);

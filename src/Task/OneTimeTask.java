@@ -10,8 +10,8 @@ public class OneTimeTask extends Task{
     }
 
     @Override
-    public boolean checkOccurance(LocalDateTime requestDate) {
-        return getDateTime().toLocalDate().equals(requestDate.toLocalDate());
+    public boolean appaersIn(LocalDateTime dateTime) {
+        return getDateTime().toLocalDate().equals(dateTime.toLocalDate());
     }
 
     @Override
