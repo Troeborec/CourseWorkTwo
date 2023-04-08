@@ -3,8 +3,11 @@ package Task;
 import Exceptions.RepeatabilityTypeException;
 import Exceptions.TaskNotFoundException;
 
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class TaskService {
     private Map<Integer, Task> taskMap;
@@ -53,4 +56,16 @@ public class TaskService {
         System.out.println("Всего задач - " + taskMap.size());
 
     }
+
+    //Проверить какие есть задачи на дату
+
+    public void getAllTaskByDate(LocalDateTime date) {
+        Set<Task> taskSet = new HashSet<Task>();
+        for (Map.Entry<Integer, Task> entry : taskMap.entrySet()) {
+            if (entry.getValue().appaersIn(date)) {
+                taskSet.add(entry.getValue());
+            }
+        }
+    }
 }
+
